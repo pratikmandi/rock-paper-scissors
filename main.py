@@ -10,5 +10,29 @@ def get_choices():
 
   return choices
 
+
+def check_win(player, computer):
+  print(f"You chose {player}, Computer chose {computer}")
+
+  if player == computer:
+    return ("It's a tie!")
+  elif player == "rock":
+    if computer == "paper":
+      return "Paper covers rock, You lose."
+    else:
+      return "Rock breaks the scissor, You win!"
+  elif player == "paper":
+    if computer == "rock":
+      return "Paper covers rock, You win!"
+    else:
+      return "Scissors cuts the paper, You lose."
+  elif player == "scissors":
+    if computer == "rock":
+      return "Rock breaks the scissor, You lose"
+    else:
+      return "Scissors cuts the paper, You win!"
+
+
 choices = get_choices()
-print(choices)
+result = check_win(choices["player"], choices["computer"])
+print(result)
